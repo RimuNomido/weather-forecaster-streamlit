@@ -35,3 +35,19 @@ services:
                -c work_mem=4MB
                -c maintenance_work_mem=64MB
     restart: always
+  
+  frontend:
+    build:
+      context: /frontend
+      dockerfile: Dockerfile
+    container_name: streamlit_app
+    ports:
+      - "8501:8501"
+    environment:
+      - FASTAPI_URL=http://backend:8000
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+    depends_on:
+      - backend
+    restart: always
+    command: streamlit run dashboard.py --server.port=8501 --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false
