@@ -28,7 +28,7 @@
 
 | Компонент | Технологии |
 |-----------|------------|
-| **Backend** | Python 3.11, FastAPI, asyncpg, SQLAlchemy (Alembic), Pydantic, httpx, geopy, tenacity |
+| **Backend** | Python 3.11, FastAPI, asyncpg, Pydantic, httpx, geopy, tenacity |
 | **Frontend** | Python 3.11, Streamlit, Altair, Pandas, httpx |
 | **Database** | PostgreSQL 15 |
 | **Инфраструктура** | Docker, Docker Compose, GitHub Actions (CI/CD), VPS |
